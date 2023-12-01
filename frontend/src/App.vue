@@ -1,10 +1,12 @@
 <template>
+  <h1>WoodLand</h1>
+
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>|
-    <router-link to="/sign-up">Sign up</router-link> |
-    <router-link to="/log-in">Log in</router-link>
+    <router-link to="/start-game">Play</router-link>
+    <router-link to="/settings-page">Settings</router-link>
+    <router-link to="/exit-page">Exit</router-link>
   </nav>
+
   <router-view/>
 </template>
 
@@ -27,24 +29,44 @@ import axios from 'axios';
 </script>
 
 <style>
+
+h1{
+  margin-top: 10vh;
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: 10px;
+  line-height: 1.2vh;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Andale Mono, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #abc0d0;
 }
 
 nav {
-  padding: 30px;
+  padding: 10px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 150px 150px 150px;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #88a0b6;
+  background-color: #070a1a;
+  font-size: larger;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 1rem;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #070a1a;
+  background-color: #88a0b6;
 }
 </style>
