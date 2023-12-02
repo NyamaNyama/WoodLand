@@ -19,7 +19,7 @@ export default {
     this.getMe()
   },
   methods:{
-    getMe(e){
+    getMe(){
       axios
       .get("/api/v1/users/me")
       .then(response=>{

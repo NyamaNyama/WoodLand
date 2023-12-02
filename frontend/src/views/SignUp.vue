@@ -23,7 +23,7 @@ export default{
         }
     },
     methods:{
-        submitForm(e){
+        submitForm(){
             const formData= {
                 username: this.username,
                 password:this.password,
