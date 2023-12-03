@@ -21,7 +21,7 @@ import axios from 'axios';
     const access = this.$store.state.access
 
     if(access){
-      axios.defaults.header.common['Authorization'] = "JWT "+ access
+      axios.defaults.headers.common['Authorization'] = "JWT "+ access
     }else{
       axios.defaults.headers.common['Authorization'] = ''
     }
