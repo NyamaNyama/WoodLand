@@ -1,29 +1,15 @@
 <template>
-  <nav>
-    <router-link to="/sign-up">Sign Up</router-link>
-    <router-link to="/log-in">Log In</router-link>
-  </nav>
-  <router-view/>
-  <div class="about">
-
-    <div class="buttons">
-      <button id="startG"> Start game </button>
-      <button id = "Set"> Settings </button>
-      <button id = "Exit"> Exit </button>
-    </div>
-  </div>
+   <div class="exitPage">
+     Are u sure?
+   </div>
+  <button id="buttonExit"> Yep </button>
 </template>
 
 
 <script setup lang="ts">
 </script>
+
 <style>
-
-.buttons{
-  display: grid;
-  justify-content: center;
-
-}
 button{
   padding: 1rem;
   margin-bottom: 1rem;
@@ -34,5 +20,16 @@ button{
   border: 3px solid #88a0b6;
   font-size: large;
 }
-
+.exitPage{
+  font-size: 30px;
+  margin-top: 10vh;
+  padding: 2vh;
+}
+#buttonExit{
+  width: 150px;
+  transition: transform 1s;
+}
+#buttonExit:hover{
+  transform: translate(30vh,30vh);
+}
 </style>

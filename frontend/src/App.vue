@@ -1,9 +1,9 @@
 <template>
   <h1>WoodLand</h1>
 
-  <nav>
+  <nav id = "mainLink">
     <router-link to="/start-game">Play</router-link>
-    <router-link to="/settings-page">Settings</router-link>
+    <router-link to="/game-control">Controls</router-link>
     <router-link to="/exit-page">Exit</router-link>
   </nav>
 
@@ -21,7 +21,7 @@ import axios from 'axios';
     const access = this.$store.state.access
 
     if(access){
-      axios.defaults.header.common['Authorization'] = "JWT "+ access
+      axios.defaults.headers.common['Authorization'] = "JWT "+ access
     }else{
       axios.defaults.headers.common['Authorization'] = ''
     }
@@ -48,11 +48,14 @@ h1{
   color: #abc0d0;
 }
 
+#mainLink{
+  grid-template-columns: 150px 150px 150px;
+}
+
 nav {
   padding: 10px;
   display: grid;
   justify-content: center;
-  grid-template-columns: 150px 150px 150px;
 }
 
 nav a {

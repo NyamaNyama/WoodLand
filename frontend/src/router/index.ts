@@ -18,9 +18,9 @@ const routes: Array<RouteRecordRaw> = [
     component: LogIn
   },
   {
-    path: '/settings-page',
-    name: 'SettingsPage',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SettingsPage.vue')
+    path: '/game-control',
+    name: 'GameControl',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GameControl.vue')
   },
   {
     path: '/exit-page',
