@@ -1,38 +1,32 @@
 <template>
-  <nav>
+
+  <nav id = "playLink">
     <router-link to="/sign-up">Sign Up</router-link>
+    or
     <router-link to="/log-in">Log In</router-link>
   </nav>
-  <router-view/>
-  <div class="about">
 
-    <div class="buttons">
-      <button id="startG"> Start game </button>
-      <button id = "Set"> Settings </button>
-      <button id = "Exit"> Exit </button>
-    </div>
-  </div>
+  <router-view/>
 </template>
 
 
 <script setup lang="ts">
+
 </script>
 <style>
 
-.buttons{
-  display: grid;
-  justify-content: center;
-
+#playLink{
+  margin: 10vh;
+  grid-template-columns: 300px 50px 300px;
 }
-button{
-  padding: 1rem;
-  margin-bottom: 1rem;
+#playLink a{
   border-radius: 20px;
   font-weight: bold;
   color: #88a0b6;
   background-color: #191d2e;
   border: 3px solid #88a0b6;
-  font-size: large;
+  font-size: medium;
 }
+
 
 </style>
