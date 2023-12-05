@@ -4,7 +4,6 @@ import LogIn from '../views/LogIn.vue'
 import HomeView from '../views/HomeView.vue'
 import Scores from '../views/Scores.vue'
 import StartGame from '../views/StartGame.vue'
-import SettingsPage from '../views/SettingsPage.vue'
 import ExitPage from '../views/ExitPage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
