@@ -7,11 +7,21 @@
     <router-link to="/game-control">Controls</router-link>
     <router-link to="/exit-page">Exit</router-link>
   </nav>
-
+<!--  @beforeRouteLeave="handleRouteLeave"-->
   <router-view/>
 </template>
 
 <script>
+// import { onBeforeRouteLeave } from "vue-router";
+
+// onBeforeRouteLeave((to, from, next) => {
+
+//   const canvas = document.querySelector("#runner-canvas");
+//   if (canvas) {
+//     canvas.parentNode?.removeChild(canvas);
+//   }
+//   next();
+// });
 import axios from 'axios';
 
  export default{

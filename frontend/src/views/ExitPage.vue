@@ -110,15 +110,20 @@ class RunnerGame {
   private ctx: CanvasRenderingContext2D;
   private obstacles: Obstacle[];
   private isGameOver: boolean;
+  private score: number;
+  private scoreInterval: number | null;
+
   constructor() {
     this.isGameOver = false;
     this.canvas = document.createElement("canvas");
+    this.canvas.setAttribute("id", "runner-canvas");
     this.canvas.width = 800;
     this.canvas.height = 400;
     document.body.appendChild(this.canvas);
-
     this.ctx = this.canvas.getContext("2d") as CanvasRenderingContext2D;
     this.obstacles = [];
+    this.score = 0;
+    this.scoreInterval = null;
   }
 
   generateObstacle() {
@@ -147,7 +152,10 @@ class RunnerGame {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.fillStyle = character.backgroundColor;
     this.ctx.fillRect(character.x, character.y, character.width, character.height);
-
+    this.ctx.fillStyle = "#ffffff";
+    this.ctx.font = "20px Arial";
+    this.ctx.textAlign = "left";
+    this.ctx.fillText(`Score: ${this.score}`, 50, 50);
     for (const obstacle of this.obstacles) {
 
       this.ctx.fillStyle = "#c2d6e7";
@@ -162,7 +170,7 @@ class RunnerGame {
       if (obstacle.x + obstacle.width < 0) {
         this.obstacles.splice(this.obstacles.indexOf(obstacle), 1);
       }
-      // Проверка столкновения персонажа с препятствием
+
       if (
           character.x < obstacle.x + obstacle.width &&
           character.x + character.width > obstacle.x &&
@@ -191,6 +199,7 @@ class RunnerGame {
 
   gameLoop() {
     if (this.isGameOver) {
+      console.log(this.score);
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.fillStyle = "#93a7b6";
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -210,6 +219,10 @@ class RunnerGame {
   start() {
     if (!this.isGameOver) {
       requestAnimationFrame(this.gameLoop.bind(this));
+      this.score = 0;
+      this.scoreInterval = setInterval(() => {
+        this.score += 10;
+      }, 1000);
     }
   }
 
