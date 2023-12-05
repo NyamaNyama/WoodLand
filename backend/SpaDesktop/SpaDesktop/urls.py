@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('djoser.urls')),
     path('api/v1/', include('djoser.urls.jwt')),    
-    path('api/v1/scores', ScoresAPIView.as_view())
+    path('api/v1/scores/', ScoresAPIView.as_view())
 
 ]

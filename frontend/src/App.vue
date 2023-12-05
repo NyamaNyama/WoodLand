@@ -4,6 +4,7 @@
   <nav>
     <router-link to="/start-game">Play</router-link>
     <router-link to="/settings-page">Settings</router-link>
+    <router-link to = "/scores">Score</router-link>
     <router-link to="/exit-page">Exit</router-link>
   </nav>
 

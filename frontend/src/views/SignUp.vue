@@ -28,6 +28,7 @@ export default{
                 username: this.username,
                 password:this.password,
             }
+            
             axios
             .post('/api/v1/users/',formData)
             .then(response => {
@@ -37,6 +38,7 @@ export default{
             .catch(error =>{
                 console.log(error)
             })
+            
         }
         
     }

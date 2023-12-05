@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework import generics
 from .serializers import ScoreSerializer
 
-class ScoresAPIView(generics.ListAPIView):
+class ScoresAPIView(generics.ListCreateAPIView):
     queryset=Score.objects.all()
-    serizalizer = ScoreSerializer
-    permission_classes=(IsAuthenticatedOrReadOnly)
+    serializer_class = ScoreSerializer
+    #permission_classes=(IsAuthenticatedOrReadOnly,)

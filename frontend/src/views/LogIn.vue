@@ -24,7 +24,7 @@ export default{
         }
     },
     methods: {
-        submitForm(){
+        submitForm(e){
             axios
             .defaults.headers.common['Authorization']=''
             localStorage.removeItem("access")
@@ -48,6 +48,21 @@ export default{
             .catch(error =>{
                 console.log(error)
             })
+            /*const ScoreData = {
+                user:{username: this.username}
+,
+                score: 0,
+            }
+            axios
+            .post('api/v1/scores/',ScoreData)
+            .then(response=>{
+               
+                console.log(response)
+            })
+            .catch(error =>{
+                console.log(error)
+            })*/
+
         }
     }
 }
