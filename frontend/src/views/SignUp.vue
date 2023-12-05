@@ -5,6 +5,7 @@
               <div class="user-box">
                 <input class="input" type="email" name="username" v-model="username">
                 <label>Username</label>
+                <input type="username" name="username" v-model="username"> <br><br>
               </div>
               <div class="user-box">
                 <input class="input" type="password" name="password" v-model="password">
@@ -32,6 +33,7 @@ export default{
                 username: this.username,
                 password:this.password,
             }
+            
             axios
             .post('/api/v1/users/',formData)
             .then(response => {
@@ -41,6 +43,7 @@ export default{
             .catch(error =>{
                 console.log(error)
             })
+            
         }
         
     }

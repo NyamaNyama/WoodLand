@@ -1,11 +1,16 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import SignUp from '../views/SignUp.vue'
 import LogIn from '../views/LogIn.vue'
+import HomeView from '../views/HomeView.vue'
+import Scores from '../views/Scores.vue'
+import StartGame from '../views/StartGame.vue'
+import SettingsPage from '../views/SettingsPage.vue'
+import ExitPage from '../views/ExitPage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/start-game',
     name: 'StartGame',
-    component: () => import(/* webpackChunkName: "about" */ '../views/StartGame.vue')
+    component: StartGame
   },
   {
     path: '/sign-up',
@@ -25,7 +30,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/exit-page',
     name: 'ExitPage',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ExitPage.vue')
+    component: ExitPage
+  },
+  {
+    path: '/',
+    name:'HomeView',
+    component: HomeView,
+  },
+  {
+    path: '/scores',
+    name: 'ScoresList',
+    component: Scores
   }
 
 ]
