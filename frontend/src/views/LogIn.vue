@@ -1,12 +1,16 @@
 <template>
-    <div class="log-in-page">
+    <div class="authorize-page">
             <h1>Log in</h1>
             <form @submit.prevent="submitForm">
+              <div class="user-box">
                 <label>Username:</label>
-                <input type="username" name="username" v-model="username"> <br><br>
+                <input class="input" type="username" name="username" v-model="username"> <br><br>
+              </div>
+              <div class="user-box">
                 <label>Password:</label>
-                <input type="password" name="password" v-model="password"> <br><br>
-                <button type="submit">Log in</button>
+                <input class="input" type="password" name="password" v-model="password"> <br><br>
+              </div>
+                <button type="submit" id = "login">Log in</button>
             </form>
     </div>
 </template>
@@ -24,7 +28,7 @@ export default{
         }
     },
     methods: {
-        submitForm(e){
+        submitForm(){
             axios
             .defaults.headers.common['Authorization']=''
             localStorage.removeItem("access")
@@ -67,3 +71,23 @@ export default{
     }
 }
 </script>
+
+<style>
+
+#login {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #93a7b6;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 0 0 20px 20px;
+  font-family: Andale Mono, monospace;
+}
+
+#login:hover {
+  background-color: #677ec3;
+}
+</style>

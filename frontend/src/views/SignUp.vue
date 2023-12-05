@@ -1,15 +1,14 @@
 <template>
-    <div class="sign-up-page">
+    <div class="authorize-page">
             <h2>Sign up</h2>
             <form @submit.prevent="submitForm">
               <div class="user-box">
-                <input class="input" type="email" name="username" v-model="username">
                 <label>Username</label>
-                <input type="username" name="username" v-model="username"> <br><br>
+                <input class="input" type="username" name="username" v-model="username"> <br><br>
               </div>
               <div class="user-box">
-                <input class="input" type="password" name="password" v-model="password">
                 <label>Password</label>
+                <input class="input" type="password" name="password" v-model="password">
               </div>
                 <button type="submit" id = "signup">Sign up</button>
             </form>
@@ -51,54 +50,47 @@ export default{
 </script>
 
 <style>
-.sign-up-page {
+.authorize-page {
   max-width: 400px;
   margin: 0 auto;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #93a7b6;
+  margin-bottom: 10px;
+  color: #aabfcf;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  background-color: rgba(7, 10, 26, 0.44);
-
+  background-color: rgba(7, 10, 26, 0.65);
+  border-radius: 20px;
 }
 
 .user-box{
-  position: relative;
-  margin-bottom: 30px;
+  display: grid;
+  margin-top:20px;
+  justify-content: center;
 }
 
 .input {
-  font-size: 10px;
+  font-size: 15px;
   padding: 10px;
   border: 3px solid #88a0b6;
   border-radius: 20px;
-
+  width: 300px;
 }
 
 label {
-  position: absolute;
-  top: 10vh;
-  color: #333;
+  position: relative;
+  color: #ffffff;
   pointer-events: none;
-  transition: 0.2s;
 }
 
-.input:focus + label,
-.input:not(:placeholder-shown) + label {
-  transform: translateY(-20px);
-  font-size: 12px;
-  color: #777;
-}
 
 #signup {
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px 20px;
   border: none;
   background-color: #93a7b6;
@@ -106,9 +98,11 @@ label {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.2s;
+  border-radius: 0 0 20px 20px;
+  font-family: Andale Mono, monospace;
 }
 
 #signup:hover {
-  background-color: #555;
+  background-color: #677ec3;
 }
 </style>

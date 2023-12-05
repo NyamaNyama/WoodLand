@@ -35,7 +35,7 @@
 <!--</style>-->
 
 <template>
-  lol
+.
 </template>
 
 
@@ -51,7 +51,7 @@ const character = {
   y: 350,
   width: 50,
   height: 50,
-  backgroundColor: "#08152a"
+  backgroundColor: "#ffffff"
 };
 
 let isJumping = false;
@@ -138,16 +138,6 @@ class RunnerGame {
     this.obstacles.push(new Obstacle(x, y, width, height));
   }
 
-  // drawObstacles() {
-  //   this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-  //   this.ctx.fillRect(character.x, character.y, character.width, character.height);
-  //   this.ctx.fillStyle = character.backgroundColor;
-  //
-  //   for (const obstacle of this.obstacles) {
-  //
-  //     this.ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-  //   }
-  // }
   drawObstacles() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.ctx.fillStyle = character.backgroundColor;
@@ -157,7 +147,6 @@ class RunnerGame {
     this.ctx.textAlign = "left";
     this.ctx.fillText(`Score: ${this.score}`, 50, 50);
     for (const obstacle of this.obstacles) {
-
       this.ctx.fillStyle = "#c2d6e7";
       this.ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
     }
@@ -171,12 +160,22 @@ class RunnerGame {
         this.obstacles.splice(this.obstacles.indexOf(obstacle), 1);
       }
 
-      if (
+      if
+      (
           character.x < obstacle.x + obstacle.width &&
           character.x + character.width > obstacle.x &&
           character.y < obstacle.y + obstacle.height &&
           character.y + character.height > obstacle.y
-      ) {
+      )
+      {
+        this.isGameOver = true;
+      }
+      else if
+      (
+          character.x < 0 ||
+          character.x + character.width > this.canvas.width
+      )
+      {
         this.isGameOver = true;
       }
 
@@ -199,14 +198,13 @@ class RunnerGame {
 
   gameLoop() {
     if (this.isGameOver) {
-      console.log(this.score);
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.fillStyle = "#93a7b6";
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.fillStyle = "#0e1f33";
       this.ctx.font = "30px Arial";
       this.ctx.textAlign = "center";
-      this.ctx.fillText("Oh no, you lose. Press enter to restart", this.canvas.width/2, this.canvas.height/2-70);
+      this.ctx.fillText("Oh no, you lose. Press ENTER to restart", this.canvas.width/2, this.canvas.height/2-70);
 
       return;
     }
