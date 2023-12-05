@@ -40,13 +40,30 @@ const routes: Array<RouteRecordRaw> = [
     path: '/scores',
     name: 'ScoresList',
     component: Scores
+  },
+  {
+    path: '/game-run',
+    name: 'GameRun',
+    component: () => import(/* webpackChunkName: "about" */ '../views/GameRun.vue')
   }
-
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
+router.beforeEach((to, from, next) => {
+  const isExitPage = from.path === '/exit-page';
+
+  if (isExitPage && to.path !== '/game-run') {
+    const canvasElement = document.querySelector('#runner-canvas');
+    if (canvasElement) {
+      canvasElement.remove();
+    }
+  }
+
+  next();
+});
+
 
 export default router
