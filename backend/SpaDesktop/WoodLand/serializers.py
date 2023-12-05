@@ -8,11 +8,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('username',)
 
 class ScoreSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+    user = UserSerializer(read_only=True)
     class Meta:
         model = Score
         fields = ('user','score')    
-        
+
     def create(self, validated_data):
         username=self.context['request'].data['user']['username']
         user_instance=User.objects.get(username=username)

@@ -26,3 +26,4 @@ urlpatterns = [
     path('api/v1/scores/<str:user__username>/',ScoreAPIChange.as_view())
 
 ]
+    

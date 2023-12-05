@@ -8,7 +8,7 @@ class ScoresAPIView(generics.ListCreateAPIView):
     queryset=Score.objects.all().order_by('-score')
     serializer_class = ScoreSerializer
     #permission_classes=(IsAuthenticatedOrReadOnly,)
-class ScoreAPIChange(generics.RetrieveDestroyAPIView):
+class ScoreAPIChange(generics.RetrieveUpdateDestroyAPIView):
     queryset=Score.objects.all()
     serializer_class=ScoreSerializer
     lookup_field='user__username'
