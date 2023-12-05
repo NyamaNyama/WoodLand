@@ -53,7 +53,7 @@ h1{
 }
 
 #mainLink{
-  grid-template-columns: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px 150px;
 }
 
 nav {
