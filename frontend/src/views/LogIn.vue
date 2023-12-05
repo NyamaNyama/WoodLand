@@ -40,13 +40,16 @@ export default{
                 const  refresh=response.data.refresh
                 this.$store.commit('setAccess',access)
                 this.$store.commit('setRefresh',refresh)
+                this.$store.commit('setUserName',this.username)
                 axios.defaults.headers.common['Authorization'] = "JWT " + access
                 localStorage.setItem("access",access)
                 localStorage.setItem("refresh",refresh)
+                localStorage.setItem("username",this.username)
                 this.$router.push("/")
             })
             .catch(error =>{
-                console.log(error)
+                console.error(error)
+                this.error="Неверный логин или пароль"
             })
             /*const ScoreData = {
                 user:{username: this.username}

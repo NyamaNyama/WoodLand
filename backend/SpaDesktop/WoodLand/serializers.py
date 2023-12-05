@@ -12,3 +12,12 @@ class ScoreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Score
         fields = ('user','score')    
+        
+    def create(self, validated_data):
+        username=self.context['request'].data['user']['username']
+        user_instance=User.objects.get(username=username)
+        score=Score.objects.create(user=user_instance,**validated_data)
+        return score
+
+
+

@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from WoodLand.views import ScoresAPIView
+from WoodLand.views import ScoresAPIView, ScoreAPIChange
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('djoser.urls')),
     path('api/v1/', include('djoser.urls.jwt')),    
-    path('api/v1/scores/', ScoresAPIView.as_view())
+    path('api/v1/scores/', ScoresAPIView.as_view()),
+    path('api/v1/scores/<str:user__username>/',ScoreAPIChange.as_view())
 
 ]

@@ -3,9 +3,8 @@
             <h2>Sign up</h2>
             <form @submit.prevent="submitForm">
               <div class="user-box">
-                <input class="input" type="email" name="username" v-model="username">
                 <label>Username</label>
-                <input type="username" name="username" v-model="username"> <br><br>
+                <input class="input" type="username" name="username" v-model="username">
               </div>
               <div class="user-box">
                 <input class="input" type="password" name="password" v-model="password">
@@ -33,7 +32,6 @@ export default{
                 username: this.username,
                 password:this.password,
             }
-            
             axios
             .post('/api/v1/users/',formData)
             .then(response => {

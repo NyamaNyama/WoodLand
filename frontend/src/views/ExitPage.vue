@@ -230,7 +230,7 @@ body {
   overflow: hidden;
 }
 canvas{
-  background-image: url("../../../../../WoodLand/Test/bacBackground.png");
+  background-image: url("../assets/bacBackground.png");
   border: 10px solid #030a28;
   border-radius: 30px;
   background-size: cover;
