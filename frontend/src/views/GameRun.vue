@@ -161,7 +161,7 @@ class RunnerGame {
 
   gameLoop() {
     if (this.isGameOver) {
-
+      this.ConnectToServer()
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.ctx.fillStyle = "#93a7b6";
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -188,22 +188,24 @@ class RunnerGame {
     }
   }
   ConnectToServer(){
+    
     const ScoreData = {
         "user": {
           "username": username
         },
         "score": this.score
       };
-      axios.get('http://127.0.0.1:8000/api/v1/scores/${username}/')
+      axios.get(`http://127.0.0.1:8000/api/v1/scores/${username}/`)
       .then(response => {
         if(response.data.score < this.score){
           const NewScore={
             score:this.score
           } 
-          axios.put('http://127.0.0.1:8000/api/v1/scores/${username}/',NewScore)
+          axios.put(`http://127.0.0.1:8000/api/v1/scores/${username}/`,NewScore)
         }
       })
       .catch(error=>{
+        
         axios.post('http://127.0.0.1:8000/api/v1/scores/',ScoreData)
         .then(response =>{
           console.log("Новый рекорд!",response.data);

@@ -55,20 +55,6 @@ export default{
                 console.error(error)
                 this.error="Неверный логин или пароль"
             })
-            /*const ScoreData = {
-                user:{username: this.username}
-,
-                score: 0,
-            }
-            axios
-            .post('api/v1/scores/',ScoreData)
-            .then(response=>{
-               
-                console.log(response)
-            })
-            .catch(error =>{
-                console.log(error)
-            })*/
 
         }
     }

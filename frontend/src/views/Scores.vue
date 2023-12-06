@@ -2,14 +2,10 @@
     <div class="score">
       <h2>Leaderboard</h2>
       <ol class = "rounded" >
-        <li><a href="#">Элемент списка</a></li>
-        <li><a href="#">Элемент списка</a></li>
-        <li><a href="#">Элемент списка</a></li>
-        <li><a href="#">Элемент списка</a></li>
-        <li><a href="#">Элемент списка</a></li>
-<!--        <li v-for="(score,index) in scores" :key="index">-->
-<!--            {{score.user.username}} : {{score.score}}-->
-<!--        </li>-->
+        
+        <li v-for="(score,index) in scores" :key="index">
+            <a href='#'>{{score.user.username}} : {{score.score}}</a>
+        </li>
       </ol>   
     </div>
 </template>
