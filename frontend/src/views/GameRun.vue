@@ -219,8 +219,5 @@ canvas{
   margin-right: auto;
   display: block;
   width: 50%;
-
 }
-
-
 </style>
