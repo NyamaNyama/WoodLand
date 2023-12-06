@@ -53,15 +53,13 @@ const router = createRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  const isExitPage = from.path === '/exit-page';
-
+  const isExitPage = from.path === '/game-run';
   if (isExitPage && to.path !== '/game-run') {
     const canvasElement = document.querySelector('#runner-canvas');
     if (canvasElement) {
       canvasElement.remove();
     }
   }
-
   next();
 });
 

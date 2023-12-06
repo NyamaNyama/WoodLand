@@ -4,23 +4,8 @@
   </div>
  <button id="buttonExit"> Yep </button>
 </template>
-<!--@click="closeApp"-->
 
 <script setup lang="ts">
-//import { defineComponent } from 'vue'
-//
-//const closeApp = () => {
-//
-//  window.close();
-//}
-//
-//defineComponent({
-//  setup() {
-//    return {
-//      closeApp
-//    }
-//  }
-//})
 </script>
 
 <style>

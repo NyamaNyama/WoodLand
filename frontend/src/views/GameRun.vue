@@ -10,8 +10,6 @@ class Obstacle {
 import axios from "axios";
 import {useStore} from 'vuex';
 
-
-
 const character = {
   x: 200,
   y: 350,
@@ -154,10 +152,6 @@ class RunnerGame {
     } else if (keys["d"] || keys["D"] ) {
       character.x += 5;
     }
-    //
-    // if (this.obstacles.length === 0 || this.obstacles[this.obstacles.length - 1].x < this.canvas.width - 500) {
-    //     this.generateObstacle();
-    // }
     if ( Math.random() < 0.015 ) {
       this.generateObstacle();
     }
@@ -194,7 +188,6 @@ class RunnerGame {
     }
   }
   ConnectToServer(){
-    
     const ScoreData = {
         "user": {
           "username": username
@@ -222,17 +215,13 @@ class RunnerGame {
   }
 }
 
-
 const game = new RunnerGame();
 game.start();
-
 
 </script>
 
 <style>
 body {
-  /*background-image: url("background.png");*/
-  /*background-size: cover;*/
   background-color: #0e1f33;
   overflow: hidden;
 }
@@ -249,8 +238,6 @@ canvas{
   margin-right: auto;
   display: block;
   width: 50%;
-
 }
-
 
 </style>
