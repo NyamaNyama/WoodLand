@@ -1,6 +1,7 @@
 <template>
 
   <nav id = "playLink">
+    
     <router-link to="/sign-up">Sign Up</router-link>
     or
     <router-link to="/log-in">Log In</router-link>
